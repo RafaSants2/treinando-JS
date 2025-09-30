@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Java Script</h1>
+    <p>Tudo o que eu aprendi sobre JS até o momento</p>
+
+    <script>
+        var ano_atual = 2025
+        var ano_nascimento = Number.parseInt(window.prompt('Em que ano você nasceu?'))
+        var idade = ano_atual - ano_nascimento
+        document.write(`Você possui ${idade} anos! <hr>`)
+
+        var palavra1 = window.prompt('Agora, me diga uma palavra aleatória')
+        var palavra2 = window.prompt('Agora, me diga uma segunda palavra')
+        document.write(`Sua primeira palavra possui ${palavra1.length} letras. <br>`)
+        document.write(`Sua primeira palavra escrita em maiúsculas: ${palavra1.toUpperCase()} <br>`)
+        document.write(`Sua primeira palavra em minúsculas: ${palavra1.toLowerCase()} <hr>`)
+        document.write(`Sua segunda palavra possui ${palavra2.length} letras. <br>`)
+        document.write(`Sua segunda palavra em maiúsculas: ${palavra2.toUpperCase()} <br>`)
+        document.write(`SUa segunda palavra em minúsculas: ${palavra2.toLowerCase()}`)
+
+        /*
+        window.alert('Olá, me chamo Windows!')
+        var nome = window.prompt('E você, como se chama?')
+        window.alert(`Olá, ${nome}! é um prazer em te conhecer.`)
+        window.confirm(`Aproveite o seu curso, ${nome}, beleza?`)
+        */
+    </script>
+</body>
+</html>
