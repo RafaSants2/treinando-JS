@@ -12,10 +12,31 @@
 
         h1 {
             text-align: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: auto;
+            padding: 5px;
+            width: 400px;
         }
     </style>
 </head>
 <body>
     <h1>Estudando operadores</h1>
+
+    <script>
+        var n1 = Number(window.prompt('Digite um número: '))
+        var n2 = Number(window.prompt('Digite outro número: '))
+        soma = n1 + n2
+        mult = n1 * n2
+        div = n1 / n2
+        resto = n1 % n2
+        sub = n1 - n2
+        
+        document.write(`A soma entre ${n1} + ${n2} é igual a ${soma} <br> <hr>`)
+        document.write(`A multiplicação entre ${n1} x ${n2} é igual a ${mult} <br> <hr>`)
+        document.write(`A divisão entre ${n1} / ${n2} é igual a ${div} <br> <hr>`)
+        document.write(`O resto da divisão entre ${n1} e ${n2} é igual a ${resto} <br> <hr>`)
+        document.write(`A subtração entre ${n1} - ${n2} é igual a ${sub}`)
+    </script>
 </body>
 </html>
