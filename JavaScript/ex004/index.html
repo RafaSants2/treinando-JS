@@ -19,14 +19,28 @@
     <h1>Iniciando estudos com DOM</h1>
     <p>Aqui irá o resultado</p>
     <p>Aprendendo a estudar <strong>DOM</strong> em JavaScript.</p>
-    <div>Clique em mim</div>
+    <div id="msg">Clique em mim</div>
 
     <script>
-        var corpo = window.document.body
-        var p1 = window.document.getElementsByTagName('p')[0]
-        corpo.style.background = 'lightblue'
-
-        document.write('Você mandou aparecer isso: ' + p1.innerHTML) /*se eu usasse Text no lugar de HTML, só iria mexer no texto, mas como eu usei o HTML ele vai mexer em tudo que estiver "marcado" naquele texto ou seja, as tags filhas, que nesse caso ele destacou o que está em negrito (strong), dado que eu declarei a minha var usando a tag p(parágrafo).*/
+        /*
+        var aviso = window.document.getElementById('msg')
+        aviso.innerText = 'agora a minha msg mudou'
+        aviso.style.background = 'Orange'
+        */
+        /*
+        var aviso = window.document.getElementsByName('msg')[0]
+        aviso.innerText = 'Agora eu mudei o que estava dentro da div com Name'
+        aviso.style.background = 'Lightblue
+        */
+        /*
+        var aviso = window.document.getElementsByClassName('msg')[0]
+        aviso.innerText = 'Agora estou usando uma class na minha div...'
+        aviso.style.background = 'darkred'
+        aviso.style.color = 'white'
+        */
+       var aviso = window.document.querySelector('#msg')
+       aviso.innerText = 'Agora, estou usando o QuerySelector na minha div'
+       aviso.style.background = 'lightgrey'
     </script>
 </body>
 </html>
