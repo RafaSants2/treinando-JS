@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM (segundo exercicío)</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }   
+    </style>
+</head>
+<body>
+    <h1>SOMANDO VALORES...</h1>
+    <form action="" method="post">
+        <p>
+            <label for="in1">Primeiro valor: </label>
+            <input type="number" name="" id="in1">
+        </p>
+        <p>
+            <label for="in2">Segundo valor: </label>
+            <input type="number" name="" id="in2">
+        </p>
+        <p>
+            <input type="reset" value="Limpar">
+            <input type="button" value="Somar" onclick="somar()">
+        </p>
+        <div id="res">Resultado: </div>
+    </form>
+
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('in1')
+            var tn2 = window.document.getElementById('in2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var soma = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${soma}</strong>`
+        }
+    </script>
+</body>
+</html>
