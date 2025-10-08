@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="container">
+        <div id="central">
+            <h1>Calculadora de soma</h1>
+            <form action="" method="post" autocomplete="on">
+                <p>
+                    <label for="in1"></label>
+                    <input type="number" name="" id="in1" placeholder="primeiro número" class="n1">
+                </p>
+                <p>
+                    <label for="in2"></label>
+                    <input type="number" name="" id="in2" placeholder="segundo número" class="n2">
+                </p>
+                <p>
+                    <input type="button" value="Enviar" class="envio" onclick="somar()">
+                    <input type="reset" value="Limpar" class="apagar">
+                </p>
+                <div id="resul"><p>Resultado</p></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('in1')
+            var tn2 = window.document.getElementById('in2')
+            var resultad0 = window.document.getElementById('resultado')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var soma = n1 + n2
+            resul.innerHTML = `<strong>${soma}</strong>`
+        }
+    </script>
+</body>
+</html>
