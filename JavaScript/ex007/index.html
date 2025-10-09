@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            margin: auto;
+            background-color: lightgrey;
+            width: 350px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SISTEMA DE MULTAS</h1>
+    <form action="">
+        <label for="ivel">Velocidade do carro: </label>
+        <input type="number" name="" id="ivel" required>
+
+        <p><input type="button" value="Verificar" onclick="clique()"></p>
+    </form>
+    <div id="resul"></div>
+    <div id="rest"></div>
+
+    <script>
+        function clique() {
+            var velocidade = window.document.getElementById('ivel')
+            var vel = Number(velocidade.value)
+            var calc = window.document.getElementById('rest')
+            var resultado = document.querySelector('div#resul')
+            resultado.innerHTML = `Sua velocidade atual é de <strong>${vel}km/h</strong>`
+            if (vel > 60) {
+                calc.style.background = 'red'
+                calc.style.color = 'white'
+                calc.innerHTML = 'Você ultrapassou a velocidade.'
+                calc.innerHTML += ' MULTADO'
+            } else {
+                calc.style.background = 'lightgreen'
+                calc.style.color = 'white'
+                calc.innerHTML = 'Tudo em ordem!'
+                calc.innerHTML += ' Dirija com cinto de segurança'
+            }
+        }
+    </script>
+</body>
+</html>
