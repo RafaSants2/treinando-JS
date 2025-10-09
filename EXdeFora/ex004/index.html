@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="central">
+            <h1>Média</h1>
+            <form action="" method="post" autocomplete="on">
+                <p>
+                    <label for="inota1">Primeira nota </label>
+                    <input type="number" name="" id="inota1" max="10" step="0.5">
+                </p>
+                <p>
+                    <label for="inota2">Segunda nota </label>
+                    <input type="number" name="" id="inota2" max="10" step="0.5">
+                </p>
+                <p>
+                    <input type="button" value="Enviar" onclick="clicar()">
+                </p>
+            </form>
+            <div id="result"></div>
+            <div id="condicao"></div>
+        </div>
+    </div>
+
+    <script>
+        function clicar () {
+            var n1 = document.getElementById('inota1')
+            var n2 = document.getElementById('inota2')
+            var nota1 = Number(n1.value)
+            var nota2 = Number(n2.value)
+            var média = (nota1 + nota2) / 2
+            var resultado = document.querySelector('div#result')
+            resultado.style.background = 'rgb(238, 235, 235)'
+            resultado.style.padding = '10px'
+            resultado.innerHTML = `A sua média foi de <strong>${média}</strong>`
+            var condição = document.querySelector('div#condicao')
+            if (média >= 6.0) {
+                condição.style.background = 'rgb(178, 245, 178)'
+                condição.style.padding = '10px'
+                condição.innerHTML = 'Você foi <strong>APROVADO</strong>!'
+            } else {
+                condição.style.background = 'rgb(243, 143, 143)'
+                condição.style.padding = '10px'
+                condição.innerHTML = 'Você foi <strong>REPROVADO</strong>!'
+            }
+        }
+    </script>
+</body>
+</html>
