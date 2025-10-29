@@ -12,6 +12,6 @@ function tempo() {
         document.body.style.background = '#f7d699ff'
     } else {
         resposta.innerHTML = 'Boa noite.'
-        document.body.style.background = '#7070eb'
+        document.body.style.background = '#6060faff'
     }
 } 
