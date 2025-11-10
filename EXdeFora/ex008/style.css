@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html {
+    width: 100vw;
+    height: 95vh;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article {
+    background-color: lightgray;
+    width: 200px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.384);
+}
+
+article input[type='number'] {
+    margin-bottom: 15px;
+    height: 30px;
+    width: 85px;
+    text-align: center;
+    font-size: 15px;
+    border: 1px solid lightgrey;
+    outline: none;
+}
+
+article input[type='button'] {
+    margin-bottom: 15px;
+    height: 30px;
+    width: 88px;
+    cursor: pointer;
+}
+
+article div > p {
+    text-align: left;
+}
