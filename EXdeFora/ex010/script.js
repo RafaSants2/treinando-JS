@@ -1,21 +1,24 @@
 function avaliar() {
-    var cont = document.getElementById('Icont')
+    var cont1 = document.getElementById('Icont1')
+    var cont2 = document.getElementById('Icont2')
     var resultado = document.getElementById('resul')
-    resultado.innerHTML = ''
     var paragrafo = document.createElement('p')
-    if (cont.value.length == 0) {
-        resultado.style = 'margin-top: 15px'
+    resultado.innerHTML = ''
+    resultado.style.marginTop = '15px';
+    if (cont1.value.length == 0 || cont2.value.length == 0) {
         paragrafo.innerHTML = '<strong>[ERRO]</strong><br> Digite um número para que haja uma contagem.'
         resultado.appendChild(paragrafo)
     } else {
-        var contagem = Number(cont.value)
+        var contagem1 = Number(cont1.value)
+        var contagem2 = Number(cont2.value)
         var soma = 0
-        
-        while (contagem != 0) {
-            soma += contagem
-            return;
+        if (contagem1 == 0 && contagem2 == 0) {
+            paragrafo.innerHTML = 'Programa terminado.'
+            resultado.appendChild(paragrafo)
+        } else {
+            soma = contagem1 + contagem2
+            paragrafo.innerHTML = `Ao todo, a soma da tua contagem foi de <strong>${soma}</strong>`
+            resultado.appendChild(paragrafo)
         }
-        paragrafo.innerHTML = `Ao todo, a soma da sua contagem foi de ${soma}`
-        resultado.appendChild(paragrafo)
     }
 }
