@@ -1,7 +1,0 @@
-@charset "UTF-8";
-
-@media (max-width: 500px) {
-    article {
-        width: 70vw;
-    }
-}
