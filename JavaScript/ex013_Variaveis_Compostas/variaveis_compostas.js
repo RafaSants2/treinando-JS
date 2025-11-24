@@ -1,18 +1,4 @@
-let núm = [34, 5, 2, 19, 11, 1]
-núm.push(99)
-console.log(`Nosso vetor é o ${núm}`)
-console.log(`O primeiro valor do vetor é ${núm[0]} (sem ser de forma crescente)`)
-console.log(`Esse vetor possui ${núm.length} elementos.`)
-núm.sort()
-console.log(`Vetor com os mesmos números, porém de forma crescente: ${núm}`)
-console.log(`O primeiro valor do vetor é ${núm[0]} (de forma crescente)`)
-
-
-
-
-
 /*
-
 Variáveis compostas:
 Para entende-lá, vamos ver de novo o que é Variáveis (simples):
 - As variáveis simples só conseguem armazenar UM VALOR por vez, ou seja, eu não posso colocar mais de um valor numa mesma variável, a menos que eu troque a anterior por uma nova. É tipo um espaço de estacionamento para carro, nesse espaço caberá apenas um carro, e o minímo que se pode fazer para que seja um carro diferente dentro desse estacionamento, é tirando o carro atual para colocar o novo, e é exatamente isso o que acontece com as váriaveis simples.
@@ -35,7 +21,31 @@ Outra coisa que se pode fazer também com arrays/vetores, é saber o comprimento
 
 Também temos o método ".sort()" que se coloca na array, esse método pega todos os valores dentro do vetor, e vai organizá-los de forma crescente. EX:
 ANTES: let núm = [19, 5, 91, 2, 14, 4]
-
 DEPOIS (com 'núm.sort()'): núm = [2, 4, 5, 14, 19, 91]
 
+- Outra coisa comum de se fazer com vetores é mostrar ele na tela sem a formatação padrão, ou seja, sem colchetes, e para isso, se usa uma estrutura de repetição (while, for)
+EX:
+let núm = [34, 5, 2, 19, 11, 1]
+for(let pos=0 ; pos<núm.length ; pos++) {
+    console.log(núm[pos])
+}
+RESULTADO: 
+34
+5
+2
+19
+11
+1
+
+- Porém, essa maneira não é a única. Esse código acima é o mais tradicional do percuso em vetores, o que chamamos de "percurso para exibição no vetor". Há uma ,aneira mais fácil e simplificada para fazê-lo. Para isso, será criado uma estrutura "for" mais simplificada, sendo: 
+for( let pos in núm ) {
+    console.log(num[pos])
+}
+
+- Se você notou, ele não tem 3 elementos igual ao anterior, esse é mais simplificado e otimizado para variáveis compostas e objetos. No primeiro elemento, foi colocado apenas "let pos", e na parte direita, se coloca apenas a minha var composta (núm), então a lógica seria: Para cada posição dentro da var composta "núm", mostrarei console.log(num[pos]). 
+LEMBRANDO QUE: essa sintaxe do for só funciona para ARRAYS e OBJETOS.
+
+Também há outra funcionalidade, a de buscar valores dentro de um vetor, usando comandos simples: 
+núm.indexOf(7) 
+Aqui, ao invés de buscar o índice para achar o elemento, esse código foca em descobrir o ELEMENTO para me mostrar sua CHAVE/ÍNDICE
 */
