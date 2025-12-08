@@ -1,0 +1,29 @@
+Exemplo para entender as funções: quando sua mãe te chama e te passa uma ordem, a gente chama isso de "CHAMADA", e vamos supor que ela queira que você compre leite na padaria, para isso, ela precisa te dar o dinheiro, que é a entrada para que se compre o leite, e essa entrada é chamada de "PARÂMETRO" (e nessa história, há dois tipos de parâmetros: o dinheiro que é necessário e o que a sua mãe queria, que nesse caso, é o leite, sendo também um parâmetro de entrada), o processo de você ir á padaria (seja de onibus, a pé, de bicicleta etc) é chamada de "AÇÃO", ou seja, toda função tem uma ação envolvida, e quando você faz essa ação, e consegue o parâmetro (leite), você o entrega a sua mãe, o que chamamos de "RETORNO.
+
+TODA FUNÇÃO DEVE TER: Chamada, Conjunto de Parâmetros, uma Ação e um Retorno.
+-   Nem toda função usa Parâmetros, nem toda função possui retorno, mas as que veremos possuem, sim.
+
+FUNÇÕES NA PROGRAMAÇÃO: 
+* AÇÕES executadas assim que são CHAMADAS ou em decorrência de algum EVENTO.
+* Uma FUNÇÃO pode receber PARÂMETROS e retornar um RESULTADO.
+
+EX visual:
+function parimp(n) { 
+    if(n%2==0) { 
+        return 'par' 
+    } else {
+        return 'ímpar'
+    }
+}
+let resposta = parimp(11) 
+
+EXPLICAÇÃO:
+
+function parimp(n) { -> esse "n" é o meu PARÂMETRO
+    if(n%2==0) { -> toda essa estrutura condicional é a minha AÇÃO
+        return 'par' -> É o valor a ser RETORNADO vindo a da condição
+    } else {
+        return 'ímpar' -> É o valor a ser RETORNADO vindo a da condição
+    }
+}
+let resposta = parimp(11) -> aqui é a CHAMADA, é a linha que fará o disparo da ação
