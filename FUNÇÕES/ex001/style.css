@@ -1,0 +1,28 @@
+
+
+div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    
+}
+
+div button {
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+}
+
+div p {
+    font-size: 20px;
+}
+
+.destaque_click {
+    background-color: rgb(243, 63, 63);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+}

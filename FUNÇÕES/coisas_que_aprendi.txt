@@ -1,0 +1,34 @@
+A. ENCONTRAR ELEMENTOS NO HTML
+    var variavel = document.getElementById("elementoHTML")
+        Se usa para Encontrar elementos no HTML (base de tudo)
+
+    var vari = document.querySelector(seletoresCSS com # ou .)
+        Ela aceita seletores CSS.
+
+B. REAGIR A AÇÕES DO USUÁRIO (EVENTOS)
+    addEventListener() -> Essa função é obrigatória para quem quer sair do nível iniciante.
+        EX: botao.addEventListener("click", alterarTexto);
+    
+    Eventos mais comuns usando Function:
+    onclick, oninput, onsubmit, onmouseover, onkeydown
+
+C. ALTERAR CONTEÚDO (TEXTO & HTML)
+    innerText -> Se usa quando eu quero colocar um texto na minha página, seja adicionando ou trocando por outra mensagem.
+        EX: variavel.innerText = "Novo texto";
+
+    innerHTML (use com cuidado) -> Pode gerar problemas se usado sem critério e NÃO use com dados do usuário.
+        EX: variavel.innerHTML = "<strong>Olá</strong>";
+
+D. TRABALHAR COM CLASSES (INTEGRAÇÃO COM CSS)
+    classList.add() -> adiciona a classe CSS dentro do parenteses ao elemento do HTML referenciado pela variável no começo desse código. As regras visuais dessa classe estão definidas no CSS, e o JavaScript apenas decide quando essa classe deve ser aplicada.
+    EX: variavel.classList.add("vermelho");
+
+    classList.remove -> Mesma lógica da primeira, porém, aqui remove no lugar de adicionar.
+        EX: variavel.classList.remove("vermelho");
+
+    classList.toggle() -> é um interruptor de classe. Ele liga ou desliga uma classe CSS em um elemento.
+        EX: variavel.classList.toggle("ativo")
+    Se o elemento NÃO tem a classe "ativo" → ela é adicionada
+    Se o elemento JÁ tem a classe "ativo" → ela é removida
+    - É exatamente o comportamento de um botão liga/desliga.
+    → sincroniza uma classe com o estado atual do elemento, automaticamente.
