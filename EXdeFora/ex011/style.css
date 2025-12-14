@@ -52,14 +52,16 @@ article i.material-symbols-outlined:hover {
 }
 
 #relato {
+    display: none;
+}
+
+.js_desc {
     padding: 5px 10px 10px 10px;
     text-align: justify;
     font-weight: bold;
     font-family: monospace;
     font-size: 19px;
-
-    display: none;
-    
+    display: block
 }
 
 @media screen and (max-width: 430px) {
