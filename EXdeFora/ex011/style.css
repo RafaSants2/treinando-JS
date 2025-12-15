@@ -52,7 +52,7 @@ article i.material-symbols-outlined:hover {
 }
 
 #relato {
-    display: none;
+    display: block;
 }
 
 .js_desc {
