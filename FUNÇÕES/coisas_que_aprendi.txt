@@ -32,3 +32,4 @@ D. TRABALHAR COM CLASSES (INTEGRAÇÃO COM CSS)
     Se o elemento JÁ tem a classe "ativo" → ela é removida
     - É exatamente o comportamento de um botão liga/desliga.
     → sincroniza uma classe com o estado atual do elemento, automaticamente.
+    74

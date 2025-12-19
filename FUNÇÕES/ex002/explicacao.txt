@@ -1,0 +1,2 @@
+onload -> geralmente usado no body
+onsubmit -> usado na tag form

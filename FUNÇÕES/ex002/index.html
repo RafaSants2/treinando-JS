@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onclick, Onload, Onsubmit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="carregar()" class="corpo">
+    <div class="conteiner">
+        <div class="filho">
+            <header>
+                <h1>Cadastro simples</h1>
+            </header>
+            <form action="" onsubmit="formulario()">
+                <label for="Iname">Informe seu nome: </label>
+                <input type="text" name="" id="Iname">
+                <p><button type="submit">Enviar</button></p>
+            </form>
+            <input type="button" value="Mudar cor de fundo" onclick="mudarCor()">
+        </div>
+    </div>
+
+    <script>
+        function carregar() {
+            /*window.alert("Seja bem-vindo!")*/
+        }
+
+        function mudarCor() {
+            var body = document.querySelector('.corpo')
+            body = body.classList.toggle("cor")
+        }
+    </script>
+</body>
+</html>
