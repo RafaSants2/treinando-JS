@@ -17,6 +17,20 @@ function diaDoMes() { /*ESSA FUNÇÃO NÃO VAI PRECISAR DE PARÂMETRO, RETORNA A
 
 const diaDoMesArrow = () => (new Date()).getDate(); /*ARROW FUNCTION QUE RETORNA ALGO SEM A NECESSIDADE DE PARÂMETRO*/
 
+function superFuncao(a, b) { /* FUNÇÃO QUE POSSUI MAIS DE UMA INSTRUÇÃO */
+    let subtracao = a - b;
+    subtracao -= 2;
+    let diaDoMes2 = (new Date()).getDate();
+    return diaDoMes2;
+}
+
+const superFuncaoArrow = (a, b) => { /* VERSÃO ARROW FUNCTION COM MAIS INSTRUÇÕES*/
+    let subtracao = a - b;
+    subtracao -= 2;
+    let diaDoMes2 = (new Date()).getDate();
+    return diaDoMes2;
+}
+
 /* 
 ARROW FUNCTION: 
     - Forma diferente de escrever funções, mas igualmente válida.
@@ -41,4 +55,6 @@ QUAL A VANTAGEM DE USAR ARROW FUNCTION NO LUGAR DE FUNCTION?
 
     DEPOIS:
         const somar2Arrow = a => a + 2;
+
+USE FUNÇÕES TRADICIONAIS QUANDO HOUVER UM BLOCO COM MAIS INSTRUÇÕES, COM ARROW FUNCTION, PARA FUNÇÕES SIMPLES E DE ÚNICA LINHA.
 */

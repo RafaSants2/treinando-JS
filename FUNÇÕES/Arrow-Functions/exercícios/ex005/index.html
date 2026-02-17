@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            padding: 0px;
+            margin: 0px;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div#sea {
+            padding: 10px;
+            background-color: rgb(230, 121, 230);
+        }
+
+        button {
+            padding: 10px;
+        }
+
+        .mudarcor {
+            background-color: lightgrey;
+            color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="sea">
+        <a href="#" id="botao">clique aqui</a>
+    </div>
+
+    <script>
+        const botão = document.getElementById("botao");
+
+        botão.addEventListener("click", function (event) {
+            botão = document.createElement("p");
+            p.textContent = "kakaka";
+        })
+    </script>
+</body>
+</html>
