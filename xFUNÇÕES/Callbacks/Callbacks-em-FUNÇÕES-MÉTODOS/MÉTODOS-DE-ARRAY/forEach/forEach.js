@@ -4,8 +4,7 @@ numeros.forEach(function(numero) {
     console.log(numero);
 });
 
-/*
-O que é forEach?
+/*O que é forEach?
     forEach é um método de array que significa: “Para cada item desse array, execute uma função.”
 
 Estrutura básica:
@@ -42,4 +41,23 @@ Isso:
     }
 
 Parâmetros da callback
+A função do forEach pode receber até 3 coisas:
+    array.forEach(function(item, indice, arrayOriginal) {}
+
+Ou seja:
+    1 - Item atual
+    2 - índice (número de ordem de cada item)
+    3 - o array inteiro
+
+Exemplo:
+    const frutas = ["maçã", "banana", "uva"];
+
+    frutas.forEach(function(fruta, indice) {
+        console.log(indice, fruta);
+    });
+
+OBS: forEach não retorna nada útil. Sempre retornará "undefined"
+Ele serve para criar algo, e não para criar novo array.
+
+Isso é diferente de "map".
 */
