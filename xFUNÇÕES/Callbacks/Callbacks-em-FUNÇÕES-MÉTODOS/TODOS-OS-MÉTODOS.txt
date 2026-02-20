@@ -1,0 +1,52 @@
+O que são? Eles são funções (ou métodos) que recebem uma callback como argumento. Não existe uma lista fechada. Qualquer função pode ser escrita para receber uma callback.
+
+Então a pergunta correta seria:
+    "Quais métodos comuns do JavaScript já prontos recebem callback?"
+
+Será organizado por categoria:
+----------------------------------------------------------------------------------------------
+1- Métodos de Array (os mais clássicos):
+Esses você VAI usar muito:
+    forEach
+    map
+    filter
+    reduce
+    some
+    every
+    find
+    findIndex
+    sort
+
+Todos recebem uma função como argumento.
+
+2 - Temporizadores:
+    setTimeout
+    setInterval
+
+Eles recebem uma função que será executada depois.
+
+3 - Eventos do DOM
+
+Qualquer coisa ligada a evento:
+    addEventListener
+    onclick
+    oninput
+    onsubmit
+    etc.
+
+Todos recebem uma função.
+
+4 - Promises
+    .then()
+    .catch()
+    .finally()
+
+Eles recebem funções como argumento.
+
+5 - Node.js (quando você for estudar backend)
+Muitas funções do Node recebem callback, por exemplo:
+    fs.readFile
+    fs.writeFile
+    etc.
+
+6 - Funções que VOCÊ cria
