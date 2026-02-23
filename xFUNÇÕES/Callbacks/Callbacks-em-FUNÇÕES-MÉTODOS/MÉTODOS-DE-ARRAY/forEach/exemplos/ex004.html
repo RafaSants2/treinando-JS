@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          margin: 0px;
+          padding: 0px;  
+        }
+
+        div {
+            flex-direction: column;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+
+        input {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="nomeInput" placeholder="Digite um nome">
+        <button id="adicionarBtn">Adicionar</button>
+
+        <ul id="listaNomes"></ul>
+    </div>
+
+    <script>
+        const input = document.getElementById("nomeInput");
+        const botão = document.getElementById("adicionarBtn");
+        const itemNomes = document.getElementById("listaNomes");
+
+        const nomes = [];
+
+        botão.addEventListener("click", event => {
+            const valorDigitado = input.value;
+            
+            nomes.push(valorDigitado); 
+            input.value = "";
+            itemNomes.innerHTML = "";
+            if (valorDigitado.trim() === "") return;
+            nomes.forEach(function(nome) {
+                const li = document.createElement("li");
+                li.textContent = nome;
+                itemNomes.appendChild(li);
+            })
+        })
+
+        /*PARA QUE SERVE ESSE ".PUSH()"?
+            esse ".push()" Serve para adicionar um elemento no final de um array
+
+        Exemplo mental:
+            Você tem: const nomes = [];
+
+            Se fizer: nomes.push("Rafael");
+
+            O array vira: ["Rafael"];
+
+            Se fizer de novo: nomes.push("Pedro");
+
+            Agora vira: ["Rafael", "Pedro"];
+
+        PARA QUE SERVE ESSE ".TRIM()"? 
+            .trim() remove espaços no começo e no final da string.
+        */
+        
+    </script>
+</body>
+</html>

@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        li {
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
-    <ul id="lista">
-        
-    </ul>
+    <ul id="lista"> </ul>
 
     <script>
         const lista = document.getElementById("lista");
-        const tarefas = [
+        const itens = [
             "Estudar JavaScript",
             "Treinar lógica",
             "Revisar objetos",
             "Praticar DOM"
         ];
 
-        tarefas.forEach(function(itens){
-            const ul = document.createElement("ul")
+        itens.forEach(item => {
+            const li = document.createElement("li")
+            li.textContent = item;
+            lista.appendChild(li);
         });
     </script>
 </body>

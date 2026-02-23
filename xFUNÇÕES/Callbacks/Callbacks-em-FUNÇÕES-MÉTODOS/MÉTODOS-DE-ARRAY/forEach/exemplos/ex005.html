@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          margin: 0px;
+          padding: 0px;  
+        }
+
+        div {
+            flex-direction: column;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+
+        button {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="mostrarBtn">Mostrar números</button>
+        <ul id="listaNumeros"></ul>
+    </div>
+
+    <script>
+        const botão = document.getElementById("mostrarBtn");
+        const lista = document.getElementById("listaNumeros")
+        const numeros = [3, 7, 12, 5, 20, 8];
+
+        botão.addEventListener("click", () => {
+            lista.innerHTML = "";
+            numeros.forEach(numero => {
+                const li = document.createElement("li");
+                if (numero > 10) {
+                    li.style.color = "red";
+                }
+            li.textContent = numero;
+            lista.appendChild(li);
+            })
+        })
+    </script>
+</body>
+</html>
