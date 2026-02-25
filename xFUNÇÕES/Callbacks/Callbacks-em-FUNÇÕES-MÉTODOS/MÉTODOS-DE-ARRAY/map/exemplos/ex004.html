@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            display: flex;
+            flex-flow: column nowrap;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="produtos">
+        <!--h2 NOME-->
+        <!--p preço original-->
+        <!--p preço com desconto 15%-->
+    </div>
+
+    <script>
+        const ListaProdutos = document.getElementById("produtos");
+        const produtos = [
+            { nome: "Teclado", preco: 120 },
+            { nome: "Mouse", preco: 80 },
+            { nome: "Monitor", preco: 900 },
+            { nome: "Headset", preco: 250 },
+            { nome: "Cadeira Gamer", preco: 400 }
+        ];
+        const desconto = 0.15;
+
+        produtos.map(produto => {
+            const nome = document.createElement("h2");
+            const preçoOriginal = document.createElement("p");
+            const preçoComDesconto = document.createElement("p");
+            const redução = produto.preco * desconto;
+
+            ListaProdutos.appendChild(nome);
+            ListaProdutos.appendChild(preçoOriginal);
+            ListaProdutos.appendChild(preçoComDesconto);
+
+            nome.textContent = produto.nome;
+            preçoOriginal.innerHTML = produto.preco;
+            preçoComDesconto.innerHTML = produto.preco - redução;
+        });
+    </script>
+</body>
+</html>
