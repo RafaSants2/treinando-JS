@@ -10,13 +10,24 @@
             padding: 0px;
         }
 
-        div {
+        #produtos {
+            height: 100vh;
             display: flex;
             flex-flow: column nowrap;
-            height: 100vh;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 10px;
+        }
+
+        .produto {
+            font-weight: bold;
+            border: 2px solid white;
+            outline: 2px solid black;
+            padding: 10px;
+        }
+
+        .caro {
+            color: red;
         }
     </style>
 </head>
@@ -34,23 +45,42 @@
             { nome: "Mouse", preco: 80 },
             { nome: "Monitor", preco: 900 },
             { nome: "Headset", preco: 250 },
-            { nome: "Cadeira Gamer", preco: 400 }
+            { nome: "Cadeira Gamer", preco: 510 }
         ];
         const desconto = 0.15;
+        //Primeiro: transformar os dados
+        const produtosComDesconto = produtos.map(produto => {
+            const valorDesconto = produto.preco * desconto;
 
-        produtos.map(produto => {
+            return {
+                nome: produto.nome,
+                precoOriginal: produto.preco,
+                precoComDesconto: produto.preco - valorDesconto
+            };
+        });
+        //Depois: renderizar no DOM
+        produtosComDesconto.forEach(produto => {
+            const container = document.createElement("div");
+            container.classList.add("produto");
+
             const nome = document.createElement("h2");
-            const preçoOriginal = document.createElement("p");
-            const preçoComDesconto = document.createElement("p");
-            const redução = produto.preco * desconto;
+            nome.textContent = produto.nome
 
-            ListaProdutos.appendChild(nome);
-            ListaProdutos.appendChild(preçoOriginal);
-            ListaProdutos.appendChild(preçoComDesconto);
+            const precoOriginal = document.createElement("p");
+            precoOriginal.textContent = `Preço original: R$ ${produto.precoOriginal.toFixed(2)}`; //Esse "toFixed(2)" resolve casas decimais.
 
-            nome.textContent = produto.nome;
-            preçoOriginal.innerHTML = produto.preco;
-            preçoComDesconto.innerHTML = produto.preco - redução;
+            const precoDesconto = document.createElement("p");
+            precoDesconto.textContent = `Com desconto: R$ ${produto.precoComDesconto.toFixed(2)}`;
+
+            if (produto.precoOriginal > 500) {
+                container.classList.add("caro");
+            }
+
+            container.appendChild(nome);
+            container.appendChild(precoOriginal);
+            container.appendChild(precoDesconto);
+
+            ListaProdutos.appendChild(container);
         });
     </script>
 </body>
