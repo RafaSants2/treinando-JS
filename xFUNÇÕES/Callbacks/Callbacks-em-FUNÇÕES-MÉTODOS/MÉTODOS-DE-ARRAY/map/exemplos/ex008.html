@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .aprovado {
+            color: rgb(52, 218, 52);
+            font-weight: bold;
+            border: 2px solid black;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+        }
+
+        .reprovado {
+            color: rgb(218, 58, 52);
+            font-weight: bold;
+            border: 2px solid black;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+        }
+
+        .resultado {
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Notas dos Alunos</h2>
+        <button id="btnNotas">Mostrar resultados</button>
+    </div>
+
+    <script>
+        const container = document.getElementById("container");
+        const btn = document.getElementById("btnNotas");
+        const alunos = [
+            { nome: "Rafael Santana", nota: 10},
+            { nome: "Neymar Junior", nota: 11},
+            { nome: "Goku", nota: 0.1},
+            { nome: "Vegeta", nota: 0.3},
+        ];
+
+        const Resultado = document.createElement("div");
+        container.appendChild(Resultado);
+        const newArray = alunos.map(aluno => {
+            return {
+                nome: aluno.nome,
+                nota: aluno.nota,
+                situacao: aluno.nota >= 6 ? "Aprovado" : "Reprovado"
+            };
+        });
+
+        function render() {
+            Resultado.innerHTML = "";
+
+            newArray.forEach(aluno => {
+                const div = document.createElement("div");
+                const h3 = document.createElement("h3");
+                h3.textContent = aluno.nome;
+                const pNota = document.createElement("p");
+                pNota.textContent = `Nota: ${aluno.nota}`;
+                const pSituacao = document.createElement("p");
+                pSituacao.textContent = `Resultado: ${aluno.situacao}`;
+
+                if (aluno.situacao === "Aprovado") {
+                    pSituacao.classList.add("aprovado");
+                } else {
+                    pSituacao.classList.add("reprovado");
+                }
+
+                div.appendChild(h3);
+                div.appendChild(pNota);
+                div.appendChild(pSituacao);
+                Resultado.appendChild(div);
+            });
+        };
+
+        btn.addEventListener("click", () => {
+            render();
+            Resultado.classList.add("resultado");
+        });
+    </script>
+</body>
+</html>

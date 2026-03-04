@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+div#container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(238, 107, 107);
+    
+}
+
+div.filho {
+    background-color: rgb(103, 104, 97);
+    padding: 20px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.733);
+    border-radius: 5px;
+}
+
+hr {
+    margin: 15px 0;
+    border: 1px solid rgb(156, 155, 155);
+}
+
+.filho #num {
+    height: 45px;
+    border-radius: 2px;
+    outline: none;
+    border: 2px solid black;
+    box-shadow: inset 1px -1px 7px rgba(0, 0, 0, 0.726);
+    background-color: rgb(53, 104, 53);
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+div.numOper {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+div.numOper button {
+    
+    font-size: 20px;
+    height: 40px;
+    box-shadow: inset -1px -3px 2px 1px rgba(0, 0, 0, 0.753);
+    border: 1px solid rgba(0, 0, 0, 0.979);
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: lightgrey;
+}
+
+button.resultado {
+    grid-column: 1 / 4;
+}
+
+button.mult {
+    grid-column: 4;
+}
+
+button.div {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+button.mais {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+button.menos {
+    grid-row: 4;
+    grid-column: 4;
+}
+
+button.zero {
+    grid-row: 5;
+    grid-column: 1 / 4;
+}
