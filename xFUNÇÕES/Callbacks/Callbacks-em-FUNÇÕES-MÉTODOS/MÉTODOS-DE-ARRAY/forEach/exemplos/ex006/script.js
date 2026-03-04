@@ -12,7 +12,6 @@ const imgDragons = [
 const nav = document.getElementById("links");
 const img = document.createElement("img");
 const h1 = document.createElement("h1");
-
 containerPai.appendChild(h1);
 divAnimation.appendChild(img);
 
@@ -23,9 +22,15 @@ imgDragons.forEach(dragon => {
     a.href = "#";
 
     nav.appendChild(a);
-
     a.addEventListener("click", (e) => {
         e.preventDefault();
+
+        document.querySelectorAll(".link").forEach(link => {
+            link.classList.remove("ativo");
+        });
+
+        a.classList.add("ativo");
+
         h1.textContent = dragon.nome;
         h1.classList.add("name");
         img.src = "img/dragoes/" + dragon.dragao;
