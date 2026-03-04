@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista com destaque</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div#principal {
+            height: 100vh;
+        }
+
+        div {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .MDI {
+            color: red;
+            font-weight: bold;
+        }
+
+        .produto {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="principal">
+        <div>
+            <h2>Lista de Nomes</h2>
+            <button id="mostrarBtn">Mostrar nomes</button>
+            <div id="lista"></div>
+        </div>
+    </div>
+
+    <script>
+        const botao = document.getElementById("mostrarBtn");
+        const lista = document.getElementById("lista");
+        const pessoas = [
+            { nome: "Rafa", idade: 18 },
+            { nome: "Ana", idade: 17 },
+            { nome: "Carlos", idade: 30 },
+            { nome: "Marina", idade: 15 }
+        ];
+
+        const listaPerson = pessoas.map(pessoa => {
+            return {
+                nome: pessoa.nome,
+                idade: pessoa.idade,
+                status: pessoa.idade >= 18 ? "Maior de idade" : "Menor de idade"
+            };
+        });
+
+        function renderizar(listaP) {
+            lista.innerHTML = "";
+
+            listaP.forEach(pessoa => {
+                const div = document.createElement("div");
+                div.classList.add("produto");
+
+                const h3 = document.createElement("h3");
+                h3.textContent = pessoa.nome;
+
+                const pIdade = document.createElement("p");
+                pIdade.textContent = `idade: ${pessoa.idade}`;
+
+                const pStatus = document.createElement("p");
+                pStatus.textContent = pessoa.status;
+
+                if (pessoa.status === "Menor de idade") {
+                    pStatus.classList.add("MDI");
+                }
+
+                div.appendChild(h3);
+                div.appendChild(pIdade);
+                div.appendChild(pStatus);
+
+                lista.appendChild(div);
+            });
+        }
+
+        botao.addEventListener("click", () => {
+            renderizar(listaPerson); /*OU SEJA: Execute a função renderizar agora e passe listaPerson como argumento.*/
+        })
+
+        
+    </script>
+</body>
+</html>
