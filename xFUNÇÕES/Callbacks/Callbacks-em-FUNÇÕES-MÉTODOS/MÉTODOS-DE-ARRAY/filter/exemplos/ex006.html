@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div#container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+            height: 100vh;
+            gap: 10px;
+        }
+
+        div#btns {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        button {
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Produtos</h1>
+        <div #="btns">
+            <button id="btnAll">Todos os números</button>
+            <button id="btnMais">Números Positivos</button>
+            <button id="btnMenos">Números negativos</button>
+        </div>
+    </div>
+
+    <script>
+        const btnAll = document.getElementById("btnAll");
+        const btnMais = document.getElementById("btnMais");
+        const btnMenos = document.getElementById("btnMenos");
+        const numeros = [1, 2, -3, -5, -10, 5, 3, 1, 0, -9, -7, -3, -3];
+
+        btnAll.addEventListener("click", () => {
+            btnAll.innerHTML = "";
+            numeros.forEach(numero => {
+                const p = document.createElement("p");
+                p.textContent = numero;
+                btnAll.appendChild(p)
+            });
+        });
+
+        btnMais.addEventListener("click", () => {
+            btnMais.innerHTML = ""
+            const NumPositivo = numeros.filter(numero => numero >= 0);
+            NumPositivo.forEach(numero => {
+                const p = document.createElement("p");
+                p.textContent = numero;
+                btnMais.appendChild(p);
+            });
+        });
+
+        btnMenos.addEventListener("click", () => {
+            btnMenos.innerHTML = ""
+            const NumNegativo = numeros.filter(numero => numero < 0);
+            NumNegativo.forEach(numero => {
+                const p = document.createElement("p");
+                p.textContent = numero;
+                btnMenos.appendChild(p);
+            });
+        });
+    </script>
+</body>
+</html>
