@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        #container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #botao {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Lista de Números</h1>
+        <button id="botao">Mostrar númeos pares</button>
+        <ul id="lista"></ul>
+    </div>
+
+    <script>
+        const botao = document.getElementById("botao");
+        const lista = document.getElementById("lista");
+        const numeros = [3, 8, 12, 5, 7, 20, 1, 16];
+
+        botao.addEventListener('click', () => {
+            lista.innerHTML = "";
+            const numPar = numeros.filter(numero => numero % 2 === 0);
+            numPar.forEach(numero => {
+                const li = document.createElement("li");
+                li.textContent = numero;
+                lista.appendChild(li);
+
+            });
+        })
+    </script>
+</body>
+</html>
